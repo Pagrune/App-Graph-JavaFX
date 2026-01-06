@@ -8,25 +8,43 @@
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="ensisa.tp.MainController">
 
-
     <top>
         <MenuBar>
             <Menu text="Fichier">
-                <MenuItem text="Quitter" onAction="#quit" />
+                <MenuItem text="Quitter" onAction="#quit"/>
             </Menu>
         </MenuBar>
     </top>
 
-
     <center>
-        <StackPane>
-            <Canvas fx:id="canvas"
-                    width="700"
-                    height="700"
-                    onMousePressed="#onMousePressed"
-                    onMouseDragged="#onMouseDragged"
-                    onMouseReleased="#onMouseReleased" />
-        </StackPane>
+        <HBox spacing="10" alignment="CENTER">
+            <StackPane >
+                <Canvas fx:id="canvas1"
+                        width="400"
+                        height="400"
+                        onMousePressed="#onMousePressed"
+                        onMouseDragged="#onMouseDragged"
+                        onMouseReleased="#onMouseReleased"/>
+            </StackPane>
+
+            <StackPane >
+                <Canvas fx:id="canvas2"
+                        width="400"
+                        height="400"
+                        onMousePressed="#onMousePressed"
+                        onMouseDragged="#onMouseDragged"
+                        onMouseReleased="#onMouseReleased"/>
+            </StackPane>
+
+            <StackPane>
+                <Canvas fx:id="canvas3"
+                        width="400"
+                        height="400"
+                        onMousePressed="#onMousePressed"
+                        onMouseDragged="#onMouseDragged"
+                        onMouseReleased="#onMouseReleased"/>
+            </StackPane>
+        </HBox>
     </center>
 
 </BorderPane>
