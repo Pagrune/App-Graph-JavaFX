@@ -3,6 +3,7 @@
 <?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
@@ -11,39 +12,53 @@
     <top>
         <MenuBar>
             <Menu text="Fichier">
+                <MenuItem text="Ouvrir image" onAction="#openImage"/>
                 <MenuItem text="Quitter" onAction="#quit"/>
             </Menu>
         </MenuBar>
     </top>
 
     <center>
-        <HBox spacing="10" alignment="CENTER">
-            <StackPane >
-                <Canvas fx:id="canvas1"
-                        width="700"
-                        height="700"
-                        onMousePressed="#onMousePressed"
-                        onMouseDragged="#onMouseDragged"
-                        onMouseReleased="#onMouseReleased"/>
-            </StackPane>
+        <HBox spacing="20" alignment="CENTER">
+            <VBox alignment="CENTER" spacing="10">
+                <Label text="Image filtrée" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                <ImageView fx:id="image"
+                           fitWidth="600"
+                           fitHeight="600"
+                           preserveRatio="true"/>
+            </VBox>
 
-            <StackPane >
-                <Canvas fx:id="canvas2"
-                        width="700"
-                        height="700"
-                        onMousePressed="#onMousePressed"
-                        onMouseDragged="#onMouseDragged"
-                        onMouseReleased="#onMouseReleased"/>
-            </StackPane>
+            <VBox spacing="10" alignment="CENTER">
+                <VBox alignment="CENTER" spacing="5">
+                    <Canvas fx:id="canvas1"
+                            width="400"
+                            height="400"
+                            onMousePressed="#onMousePressed"
+                            onMouseDragged="#onMouseDragged"
+                            onMouseReleased="#onMouseReleased"/>
+                    <Label text="Rouge" style="-fx-text-fill: red; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                </VBox>
 
-            <StackPane>
-                <Canvas fx:id="canvas3"
-                        width="700"
-                        height="700"
-                        onMousePressed="#onMousePressed"
-                        onMouseDragged="#onMouseDragged"
-                        onMouseReleased="#onMouseReleased"/>
-            </StackPane>
+                <VBox alignment="CENTER" spacing="5">
+                    <Canvas fx:id="canvas2"
+                            width="400"
+                            height="400"
+                            onMousePressed="#onMousePressed"
+                            onMouseDragged="#onMouseDragged"
+                            onMouseReleased="#onMouseReleased"/>
+                    <Label text="Vert" style="-fx-text-fill: green; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                </VBox>
+
+                <VBox alignment="CENTER" spacing="5">
+                    <Canvas fx:id="canvas3"
+                            width="400"
+                            height="400"
+                            onMousePressed="#onMousePressed"
+                            onMouseDragged="#onMouseDragged"
+                            onMouseReleased="#onMouseReleased"/>
+                    <Label text="Bleu" style="-fx-text-fill: blue; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                </VBox>
+            </VBox>
         </HBox>
     </center>
 

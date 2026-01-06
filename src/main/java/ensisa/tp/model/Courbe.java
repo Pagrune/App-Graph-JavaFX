@@ -1,16 +1,20 @@
 package ensisa.tp.model;
 
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Courbe {
-
+    public Paint color;
     List<Point> points = new ArrayList<Point>();
-    public Courbe(){
+    public Courbe(Color color){
         double ecart = 255/4;
         for(double i =1; i<5 ; i++){
             points.add(new Point( i*ecart,262));
         }
+        this.color = color;
     }
 
     public List<Point> getPoints(){
