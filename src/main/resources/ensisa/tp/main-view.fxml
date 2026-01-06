@@ -20,8 +20,8 @@
         <HBox spacing="10" alignment="CENTER">
             <StackPane >
                 <Canvas fx:id="canvas1"
-                        width="400"
-                        height="400"
+                        width="700"
+                        height="700"
                         onMousePressed="#onMousePressed"
                         onMouseDragged="#onMouseDragged"
                         onMouseReleased="#onMouseReleased"/>
@@ -29,8 +29,8 @@
 
             <StackPane >
                 <Canvas fx:id="canvas2"
-                        width="400"
-                        height="400"
+                        width="700"
+                        height="700"
                         onMousePressed="#onMousePressed"
                         onMouseDragged="#onMouseDragged"
                         onMouseReleased="#onMouseReleased"/>
@@ -38,8 +38,8 @@
 
             <StackPane>
                 <Canvas fx:id="canvas3"
-                        width="400"
-                        height="400"
+                        width="700"
+                        height="700"
                         onMousePressed="#onMousePressed"
                         onMouseDragged="#onMouseDragged"
                         onMouseReleased="#onMouseReleased"/>
