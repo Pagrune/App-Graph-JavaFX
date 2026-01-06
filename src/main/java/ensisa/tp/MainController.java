@@ -78,11 +78,14 @@ public class MainController {
     }
 
     private void dessine_courbe(GraphicsContext canva) {
-        double y_preced = courbe.evaluate(0);
+        double baselineY = 265;
 
-        for (int x = 10; x <= 265; x++) {
+        double y_preced = baselineY- courbe.evaluate(0);
+        for (int x = 11; x <= 265; x++) {
             double y = courbe.evaluate(x);
-            y = couper_si_depasse(y, 0,265);
+            y = Math.max(y,couper_si_depasse(y, 0,265));
+            if(y > baselineY) y = 0;
+            if(y < 10) y=10;
             canva.strokeLine(x - 1, y_preced, x, y);
             y_preced = y;
         }
@@ -102,10 +105,5 @@ public class MainController {
     private double couper_si_depasse(double value, double min, double max) {
         return Math.max(min, Math.min(max, value));
     }
-    
-    private double couper_si_dessous(double value, double min, double max){
-        
-    }
-
 
 }
