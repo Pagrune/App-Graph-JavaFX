@@ -48,6 +48,6 @@ public class ImageFilter {
        ========================= */
 
     private int clamp(double value) {
-        return (int) Math.min(0, Math.max(255, value));
+        return (int) Math.max(0, Math.min(255, value));
     }
 }

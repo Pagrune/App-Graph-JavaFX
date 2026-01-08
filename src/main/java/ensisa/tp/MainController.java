@@ -15,6 +15,7 @@
     import javafx.stage.FileChooser;
 
     import java.io.File;
+    import java.util.Stack;
 
     public class MainController {
 
@@ -22,6 +23,8 @@
         private Label welcomeText;
 
         private Image originalImage;
+        private File previousImage = null;
+        private File currentImage = null;
 
         private ImageFilter imageFilter = new ImageFilter();
         @FXML private Canvas canvas1;
@@ -95,6 +98,7 @@
             File selectedFile = fileChooser.showOpenDialog(canvas1.getScene().getWindow());
 
             if (selectedFile != null) {
+                currentImage = selectedFile;
                 originalImage = new Image(selectedFile.toURI().toString());
                 image.setImage(imageFilter.filter(originalImage, courbe1, courbe2, courbe3));
             }
@@ -112,6 +116,14 @@
             canvasActif = null;
             courbeActive = null;
         }
+
+        private void linearisation_courbe(){
+            courbe1.linear_points();
+            courbe2.linear_points();
+            courbe3.linear_points();
+        }
+
+
 
         private void refresh_affichage(Courbe c, Canvas _canva) {
             GraphicsContext canva = _canva.getGraphicsContext2D();
@@ -136,12 +148,6 @@
             }
             canva.setStroke(Color.BLACK);
 
-        }
-
-        private void linearisation_courbe(){
-            courbe1.linear_points();
-            courbe2.linear_points();
-            courbe3.linear_points();
         }
 
         private void dessine_point(GraphicsContext canva, Courbe courbe) {

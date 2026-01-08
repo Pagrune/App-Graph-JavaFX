@@ -21,7 +21,7 @@ public class Courbe {
         int i=0;
         double ecart_y= 255/4;
         for (Point p : points){
-            p.setX( (i*ecart_y)+10);
+            p.setX((i*ecart_y)+10);
             p.setY((i*ecart_y)+10);
             i++;
         }
