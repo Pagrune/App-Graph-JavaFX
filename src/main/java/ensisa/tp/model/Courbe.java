@@ -10,11 +10,21 @@ public class Courbe {
     public Paint color;
     List<Point> points = new ArrayList<Point>();
     public Courbe(Color color){
-        double ecart = 255/4;
         for(double i =1; i<5 ; i++){
-            points.add(new Point( i*ecart,262));
+            points.add(new Point( 0,0));
         }
+        linear_points();
         this.color = color;
+    }
+
+    public void linear_points(){
+        int i=0;
+        double ecart_y= 255/4;
+        for (Point p : points){
+            p.setX( (i*ecart_y)+10);
+            p.setY((i*ecart_y)+10);
+            i++;
+        }
     }
 
     public List<Point> getPoints(){

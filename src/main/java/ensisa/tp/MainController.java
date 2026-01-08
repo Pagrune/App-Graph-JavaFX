@@ -138,6 +138,12 @@
 
         }
 
+        private void linearisation_courbe(){
+            courbe1.linear_points();
+            courbe2.linear_points();
+            courbe3.linear_points();
+        }
+
         private void dessine_point(GraphicsContext canva, Courbe courbe) {
             for (Point p : courbe.getPoints()) {
                 canva.fillOval(p.getX()-(taille_point/2), p.getY()-(taille_point/2), taille_point, taille_point);
